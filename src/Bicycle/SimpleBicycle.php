@@ -4,15 +4,15 @@ namespace App\Bicycle;
 
 class SimpleBicycle
 {
-    private $frame;
-    private $wheels;
-    private $brakes;
-    private $seat;
-    private $handlebar;
+    private string $frame;
+    private int    $wheels;
+    private string $brakes;
+    private string $seat;
+    private string $handlebar;
 
-    private $allowedFrames     = ['aluminium', 'steel'];
-    private $allowedBrakes     = ['disc', 'drum'];
-    private $allowedHandlebars = ['flat', 'drop', 'bullhorn'];
+    private array $allowedFrames     = ['aluminium', 'steel'];
+    private array $allowedBrakes     = ['disc', 'drum'];
+    private array $allowedHandlebars = ['flat', 'drop', 'bullhorn'];
 
     /**
      * @param string $frame
