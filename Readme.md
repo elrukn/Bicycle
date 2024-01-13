@@ -22,7 +22,7 @@ Install the dependencies using Composer
 
 ## Usage
 
-Once you have the project set up, you can use the `SimpleBicycleCommand` and `BrokenBicycleCommand` commands to interact with the `SimpleBicycle` class.
+Once you have the project set up, you can use the `SimpleBicycleCommand` and `BrokenBicycleCommand` commands to interact with the `Bicycle` class.
 
 Here's how to run the `SimpleBicycleCommand`:
 
