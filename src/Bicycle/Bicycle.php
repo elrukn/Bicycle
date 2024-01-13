@@ -2,7 +2,7 @@
 
 namespace App\Bicycle;
 
-class SimpleBicycle
+class Bicycle
 {
     private string $frame;
     private int    $wheels;

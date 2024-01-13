@@ -2,7 +2,7 @@
 
 namespace App\Command;
 
-use App\Bicycle\SimpleBicycle;
+use App\Bicycle\Bicycle;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -10,18 +10,18 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class SimpleBicycleCommand extends Command
 {
-    private SimpleBicycle $simpleBicycle;
+    private Bicycle  $simpleBicycle;
     protected static $defaultName = 'app:simpleBicycle';
     protected static $defaultDescription = 'Add a short description for your command';
 
     /**
      * SimpleBicycleCommand constructor.
-     * @param SimpleBicycle $simpleBicycle
+     * @param Bicycle $simpleBicycle
      *
-     * Constructor Creates a valid SimpleBicycle instance
+     * Constructor Creates a valid Bicycle instance
      */
 
-    public function __construct(SimpleBicycle $simpleBicycle)
+    public function __construct(Bicycle $simpleBicycle)
     {
         $this->simpleBicycle = $simpleBicycle;
 

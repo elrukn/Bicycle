@@ -2,7 +2,7 @@
 
 namespace App\Command;
 
-use App\Bicycle\SimpleBicycle;
+use App\Bicycle\Bicycle;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -17,7 +17,7 @@ class BrokenBicycleCommand extends Command
     {
         try {
             // Attempt to create an instance with invalid parameters
-            $simpleBicycle = new SimpleBicycle('steel', 3, 'hand', '', 'bullhorn');
+            $simpleBicycle = new Bicycle('steel', 3, 'hand', '', 'bullhorn');
 
             // Print the details of the second bicycle
             $output->writeln($simpleBicycle->displayDetails());
