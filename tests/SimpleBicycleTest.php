@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\App\Bicycle;
+namespace App\Tests;
 
 use App\Bicycle\SimpleBicycle;
 use PHPUnit\Framework\TestCase;
