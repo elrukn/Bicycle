@@ -21,7 +21,7 @@ class SimpleBicycle
      * @param string $seat
      * @param string $handlebar
      */
-    public function __construct(string $frame = 'aluminum', int $wheels = 2, string $brakes = 'disc', string $seat = 'standard', string $handlebar = 'flat')
+    public function __construct(string $frame = 'aluminium', int $wheels = 2, string $brakes = 'disc', string $seat = 'standard', string $handlebar = 'flat')
     {
         $this->setFrame($frame);
         $this->setWheels($wheels);
