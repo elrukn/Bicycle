@@ -40,4 +40,4 @@ Running the brokenBicycle Command
 ## Testing
 
 You can run the PHPUnit tests to ensure everything in the project is working as expected:
-`bin/phpunit --coverage-html coverage-report `
+``` bin/phpunit --coverage-html coverage-report ```
