@@ -2,14 +2,14 @@
 
 namespace App\Tests;
 
-use App\Bicycle\SimpleBicycle;
+use App\Bicycle\Bicycle;
 use PHPUnit\Framework\TestCase;
 
 class SimpleBicycleTest extends TestCase
 {
     public function testCreationWithDefaultValues(): void
     {
-        $bicycle = new SimpleBicycle();
+        $bicycle = new Bicycle();
         $this->assertSame('aluminium', $bicycle->getFrame());
         $this->assertSame(2, $bicycle->getWheels());
         $this->assertSame('disc', $bicycle->getBrakes());
@@ -19,7 +19,7 @@ class SimpleBicycleTest extends TestCase
 
     public function testCreationWithCustomValues(): void
     {
-        $bicycle = new SimpleBicycle('steel', 2, 'drum', 'comfort', 'drop');
+        $bicycle = new Bicycle('steel', 2, 'drum', 'comfort', 'drop');
         $this->assertSame('steel', $bicycle->getFrame());
         $this->assertSame(2, $bicycle->getWheels());
         $this->assertSame('drum', $bicycle->getBrakes());
@@ -31,40 +31,40 @@ class SimpleBicycleTest extends TestCase
     {
         $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('Invalid frame value');
-        $bicycle = new SimpleBicycle('invalidFrame');
+        $bicycle = new Bicycle('invalidFrame');
     }
 
     public function testCreationFailsWithInvalidWheels(): void
     {
         $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('Invalid number of wheels');
-        $bicycle = new SimpleBicycle('steel', 0);
+        $bicycle = new Bicycle('steel', 0);
     }
 
     public function testCreationFailsWithInvalidBrakes(): void
     {
         $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('Invalid brakes value');
-        $bicycle = new SimpleBicycle('steel', 2, 'rim');
+        $bicycle = new Bicycle('steel', 2, 'rim');
     }
 
     public function testCreationFailsWithEmptySeat(): void
     {
         $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('Invalid seat value');
-        $bicycle = new SimpleBicycle('steel', 2, 'disc', '');
+        $bicycle = new Bicycle('steel', 2, 'disc', '');
     }
 
     public function testCreationFailsWithInvalidHandlebar(): void
     {
         $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('Invalid handlebar value');
-        $bicycle = new SimpleBicycle('steel', 2, 'disc', 'comfort', 'apehanger');
+        $bicycle = new Bicycle('steel', 2, 'disc', 'comfort', 'apehanger');
     }
 
     public function testInvalidFrameAfterConstruction(): void
     {
-        $bicycle = new SimpleBicycle();
+        $bicycle = new Bicycle();
         $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('Invalid frame value');
         $bicycle->setFrame('invalidFrame');
@@ -72,7 +72,7 @@ class SimpleBicycleTest extends TestCase
 
     public function testInvalidWheelsAfterConstruction(): void
     {
-        $bicycle = new SimpleBicycle();
+        $bicycle = new Bicycle();
         $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('Invalid number of wheels');
         $bicycle->setWheels(0);
@@ -84,13 +84,13 @@ class SimpleBicycleTest extends TestCase
      */
     public function testIsFunctional(): void
     {
-        $bicycle = new SimpleBicycle('steel', 2, 'disc', 'comfort', 'drop');
+        $bicycle = new Bicycle('steel', 2, 'disc', 'comfort', 'drop');
         $this->assertTrue($bicycle->isFunctional());
     }
 
     public function testDisplayDetails(): void
     {
-        $bicycle = new SimpleBicycle('steel', 3, 'drum', 'comfort', 'drop');
+        $bicycle = new Bicycle('steel', 3, 'drum', 'comfort', 'drop');
 
         $expected = "Bicycle Details:\n"
             . "Frame: steel\n"
