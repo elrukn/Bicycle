@@ -22,9 +22,13 @@ Install the dependencies using Composer
 
 ## Usage
 
-Once you have the project set up, you can use the `SimpleBicycleCommand` and `BrokenBicycleCommand` commands to interact with the `Bicycle` class.
+Once you have the project set up, you can use the `SimpleBicycleCommand` and `BrokenBicycleCommand` commands to see how they interact with the `Bicycle` class.
 
-Here's how to run the `SimpleBicycleCommand`:
+### `SimpleBicycleCommand`
+- console command named app:simpleBicycle is declared in the SimpleBicycleCommand class, which accepts optional arguments to modify properties of the bicycle.
+- uses dependency injection to get an instance of a Bicycle class.
+- when the command is executed, if the arguments are provided, they are used to modify the bicycle, and if they are valid, the details of the modified bicycle are printed. If they are not valid, an error message is displayed, and the command fails.
+- the class also returns the final status of the command with Command::SUCCESS or Command::FAILURE.
 
 
 Without arguments (uses default values)
@@ -32,6 +36,11 @@ Without arguments (uses default values)
 
 With custom values
 `bin/console app:simpleBicycle steel 3 drum comfort drop` 
+
+
+### `BrokenBicycleCommand`
+- console command named app:brokenBicycle, attempts to create an instance with invalid parameters
+- displays error message and returns Command::FAILURE value
 
 Running the brokenBicycle Command
 `bin/console app:brokenBicycle`
