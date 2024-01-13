@@ -14,7 +14,7 @@ Clone the project
 `git clone https://github.com/elrukn/Bicycle.git`
 
 Navigate to the project directory
-`cd bicycle-project`
+`cd Bicycle`
 
 Install the dependencies using Composer
 `composer install`
@@ -33,10 +33,11 @@ Without arguments (uses default values)
 With custom values
 `bin/console app:simpleBicycle steel 3 drum comfort drop` 
 
-
+Running the brokenBicycle Command
+`bin/console app:brokenBicycle`
 
 
 ## Testing
 
 You can run the PHPUnit tests to ensure everything in the project is working as expected:
-`bin/phpunit --coverage-html coverage-report  `
+`bin/phpunit --coverage-html coverage-report `
